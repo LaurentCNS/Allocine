@@ -1,0 +1,6 @@
+App\Entity\Actor:
+    actor{0..5000}:
+        firstName: '<firstName()>'
+        lastName: '<lastName()>'
+        dateOfBirth: '<dateTimeBetween("-30000 days", "now")>'
+        startCareerAt: '<dateTimeBetween($dateOfBirth, "now")>'

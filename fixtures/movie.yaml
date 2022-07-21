@@ -1,0 +1,11 @@
+App\Entity\Movie:
+    movie{0..500}:
+        title: '<word(3)> movie'
+        releasedAt: <dateTimeBetween("-3600 days", "now")>
+        duration: <numberBetween(60, 240)>
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+        imageUrl: 'https://www.wallpaperuse.com/wallp/24-247386_m.jpg'
+        director: '@director*'
+        categories: '<numberBetween(1, 4)>x @category*'
+        actors: '<numberBetween(1, 10)>x @actor*'
+

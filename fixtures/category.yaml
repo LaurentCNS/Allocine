@@ -1,0 +1,30 @@
+App\Entity\Category:
+    category{0}:
+        label: 'Comédie'
+
+    category{1}:
+        label: 'Comédie musicale'
+      
+    category{2}:
+        label: 'Thriller'
+
+    category{3}:
+        label: 'Romance'
+
+    category{4}:
+        label: 'Drame'
+
+    category{5}:
+        label: 'Science fiction'
+
+    category{6}:
+        label: 'Fantastique'
+
+    category{7}:
+        label: 'Action'
+
+    category{8}:
+        label: 'Documentaire'
+
+    category{9}:
+        label: 'Epouvante'

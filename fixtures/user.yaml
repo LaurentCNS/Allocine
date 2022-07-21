@@ -1,0 +1,4 @@
+App\Entity\User:
+    user{0..1000}:
+        email: '<safeEmail()>'
+        password: '<word(3)>'

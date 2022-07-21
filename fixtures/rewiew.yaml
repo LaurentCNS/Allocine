@@ -1,0 +1,8 @@
+App\Entity\Review:
+    review{0..5000}:
+        note: '<numberBetween(0, 5)>'
+        comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+        createdAt: '<dateTimeBetween("-1500 days", "now")>'
+        movie: '@movie*'
+        user: '@user*'
+       
