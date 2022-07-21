@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ViewDirectorController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+	<div class='container'>
+		<h1 class='text-center mb-5 mt-5 text-uppercase'>{{director.lastName}}
+			{{director.firstName}}</h1>
+		<div class='row d-flex justify-content-center'>
+			<div class='col-lg-6 me-3 mb-5 text-center'>
+				<div class="card">
+					<img src="https://preview.redd.it/ubbd66v4w4fx.jpg?auto=webp&s=624744a168e0305cf3a71e750c8172dbd22b986f" class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Date de naissance:
+							{{director.dateOfBirth|date('d/m/Y')}}</p>
+						<p class="card-text">Début de carrière:
+							{{director.startCareerAt|date('d/m/Y')}}</p>
+						<p class="card-text">A réalisé {{director.movies|length}} films :</p>
+							{% for item in movies %}
+								<a href="/view/movie/{{item.id}}">{{item.title}}</a>
+								{% if loop.last != true %}
+									/
+								{% endif %}
+							{% endfor %}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="d-flex justify-content-center mb-5">
+			<a href="/view/movie/{{returnMovieId}}" class="btn btn-warning">Retour au film</a>
+		</div>
+	</div>
+{% endblock %}
