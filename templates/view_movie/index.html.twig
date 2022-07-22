@@ -28,13 +28,13 @@
                             {% for item in actors %} <a href="/view/actors/{{movie.id}}/{{item.id}}">{{item.firstName}} {{item.lastName}}</a> {% if loop.last != true %} / {% endif %} {% endfor %}
                             </p>
 							<p class="card-text">{{movie.description}}</p>
-							<p class="card-text">Notes des spectateurs: {{reviews_average}}/5</p>
+							<p class="card-text">Notes des spectateurs: {% if reviews_average != null %} {{reviews_average}}/5 {% else %} Aucune note {% endif %}</p>
 						</div>
 					</div>
 				</div>
 		</div>
         <div class="d-flex justify-content-center mb-5">
-        <a href="/list/movies" class="btn btn-warning">Retour à la liste</a>
+        <a href="/" class="btn btn-warning">Retour à la liste</a>
         </div>
 	</div>
 

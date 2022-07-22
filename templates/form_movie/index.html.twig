@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FormMovieController!{% endblock %}
+
+{% block body %}
+<div class="container">
+<div class="row d-flex justify-content-center">
+<h1 class="text-center mt-5 mb-5">Ajouter un film</h1>
+<div class="col-lg-6 mb-5">
+{{ form_start(form) }}
+
+    {{ form_row(form.title) }}
+    {{ form_row(form.releasedAt) }}
+    {{ form_row(form.duration) }}
+    {{ form_row(form.description) }}
+    {{ form_row(form.imageUrl) }}
+    {{ form_row(form.director) }}
+    {{ form_row(form.actors) }}
+    {{ form_row(form.categories) }}
+    
+    <div class="text-center">
+    <button class="btn btn-warning mt-3" type=\"submit\">Envoyer</button>
+    </div>
+
+{{ form_end(form) }}
+</div>
+</div>
+{% endblock %}

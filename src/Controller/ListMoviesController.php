@@ -14,7 +14,7 @@ class ListMoviesController extends AbstractController
     )
 {}
 
-    #[Route('/list/movies', name: 'app_list_movies')]
+    #[Route('/', name: 'app_list_movies')]
     public function index(): Response
     {
 

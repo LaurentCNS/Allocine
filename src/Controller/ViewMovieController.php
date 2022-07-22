@@ -31,7 +31,7 @@ class ViewMovieController extends AbstractController
 
         // faire une boucle sur toutes les notes du film
         $reviews = $movieEntity->getReviews();
-
+        $reviews_average = null;
         if(count($reviews) > 0) {
             $reviews_count = 0;
             $reviews_sum = 0;
