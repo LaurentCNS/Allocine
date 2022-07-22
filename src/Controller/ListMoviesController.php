@@ -18,6 +18,9 @@ class ListMoviesController extends AbstractController
     public function index(): Response
     {
 
+        $user = $this->getUser();
+        dump($user);
+
         // recuperer les films de la base de données
         $moviesEntities = $this->movieRepository->findAll();
 

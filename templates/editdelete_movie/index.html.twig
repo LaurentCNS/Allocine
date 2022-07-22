@@ -1,18 +1,62 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EditdeleteMovieController!{% endblock %}
+{% block title %}Hello EditdeleteMovieController!
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
 
-<div class="container">
-<div class="row d-flex justify-content-center">
-<h1 class="text-center mt-5 mb-5">Choisir un film</h1>
-<div class="col-lg-6 mb-5">
+	<div class="container">
+		<div class="row d-flex justify-content-center">
+			<h1 class="text-center mt-5 mb-5">Choisir un film</h1>
+			<div class="col-lg-6 mb-5">
+				<ul class="list-group">
+					{% for item in movies %}
+						<li>{{ item.title }}</li>
 
-</div>
-</div>
+						<div class="col-lg-6 mb-5">
+							<a href="{{ path('app_edit_movie',{'id': item.id}) }}" class="btn btn-warning">Modifier</a>
+							<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal{{item.id}}">
+								Supprimer
+							</button>
+							<div class="modal fade" id="exampleModal{{item.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Supprimer le film
+												{{ item.title }}</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										</div>
+										<div class="modal-body">
+											Etes vous sur de vouloir supprimer ce film ?
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Non</button>
+											<a href="{{ path('app_delete_movie',{'id': item.id}) }}" class="btn btn-success">Oui</a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</li>
+						<!-- Modal -->
+
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+
+	</div>
 {% endblock %}

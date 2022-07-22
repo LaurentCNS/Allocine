@@ -33,9 +33,14 @@
 					</div>
 				</div>
 		</div>
-        <div class="d-flex justify-content-center mb-5">
+        <div class="d-flex justify-content-center mb-3">
         <a href="/" class="btn btn-warning">Retour à la liste</a>
         </div>
+		{% if app.user %}
+		<div class="d-flex justify-content-center mb-5">
+		<a href="{{ path('app_form_review',{'id': movie.id}) }}" class="btn btn-warning">Ajouter un commentaire</a>
+		 </div>
+		{% endif %}
 	</div>
 
 

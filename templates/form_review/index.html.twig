@@ -2,28 +2,18 @@
 
 {% block title %}Hello FormMovieController!
 {% endblock %}
-
 {% block body %}
 	<div class="container">
 		<div class="row d-flex justify-content-center">
 			<h1 class="text-center mt-5 mb-5">
-				{% if isFormUpdate == false %}
-					Ajouter un film
-				{% else %}
-					Modifier un film
-				{% endif %}
+					Ajouter un commentaire
 			</h1>
 			<div class="col-lg-6 mb-5">
 				{{ form_start(form) }}
 
-				{{ form_row(form.title) }}
-				{{ form_row(form.releasedAt) }}
-				{{ form_row(form.duration) }}
-				{{ form_row(form.description) }}
-				{{ form_row(form.imageUrl) }}
-				{{ form_row(form.director) }}
-				{{ form_row(form.actors) }}
-				{{ form_row(form.categories) }}
+
+				{{ form_row(form.note) }}
+				{{ form_row(form.comment) }}
 
 				<div class="text-center">
 					<button class="btn btn-warning mt-3" type="\"submit\"">Envoyer</button>
